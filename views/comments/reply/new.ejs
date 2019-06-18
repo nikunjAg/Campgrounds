@@ -1,0 +1,14 @@
+<%- include ../../partials/header %>
+
+<div class="container" style="padding: 3rem 8rem;" >
+    <h2 class="text-center">Reply to a Comment</h2>
+    <form action="/campgrounds/<%= campgroundId %>/comments/<%= comment._id %>/reply" method="POST" >
+        <div class="form-group">
+            <label for="#replyInput" >Reply: </label>
+            <textarea type="text" id="replyInput" class="form-control" name="commentReply" placeholder="Enter the Reply" rows="3" required></textarea>
+        </div>
+        <button class="btn btn-outline-secondary" type="submit">Post</button>
+    </form>
+</div>
+
+<%- include ../../partials/footer %>

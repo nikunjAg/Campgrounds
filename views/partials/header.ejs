@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <title>Yelp Camp</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a href="/" class="navbar-brand">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/campgrounds" class="nav-link">Campgrounds</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto ">
+                <% if( currentUser == undefined ) { %>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link">SignUp</a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <!-- All the variables available in views are also available in partials -->
+                        <a class="nav-link">Signed As <%=currentUser.username%></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link">Logout</a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Actually the flash message here will be an array as it is possible
+         that more than one flash message exists on a single page -->
+    <% if ( errorMessages && errorMessages.length > 0 ) { %>
+        <div class="container">
+            <% errorMessages.forEach(message => { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong><%= message %></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+    <% if ( successMessages && successMessages.length > 0 ) { %>
+        <div class="container">
+            <% successMessages.forEach(message => { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><%= message %></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+
+</header>

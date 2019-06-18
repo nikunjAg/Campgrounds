@@ -1,0 +1,21 @@
+<%- include ../partials/header %>
+<div class="container" style="padding: 0rem 8rem;" >
+    <h1 class="text-center" >Add Campground</h1>
+    <form method="POST" action="/campgrounds" >
+        <div class="form-group">
+            <label for="InputTitle1">Title</label>
+            <input type="text" class="form-control" id="InputTitle1"
+                placeholder="Enter Title" name="title" autocomplete="off" required autofocus >
+        </div>
+        <div class="form-group">
+            <label for="InputImageUrl1">Url</label>
+            <input type="url" class="form-control" id="InputImageUrl1" placeholder="Image Url" name="image" autocomplete="off" required>
+        </div>
+        <div class="form-group">
+            <label for="InputCaption1">Caption</label>
+            <textarea class="form-control" id="InputCaption1" rows="3" placeholder="Add Caption" name="caption" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%- include ../partials/footer %>

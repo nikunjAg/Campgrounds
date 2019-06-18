@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", "Arial", sans-serif;
+}
+
+h1 {
+    padding: 1rem;
+}
+
+.container {
+    margin-top: 3%;
+}
+
+.card-link {
+    display: inline-block;
+    font-size: 24px;
+    padding-bottom: 1%;
+    color: #5e5e5e;
+    font-family: "Lato", "Arial", sans-serif;
+}
+
+.card-link:hover {
+    color: #5e5e5e;
+    text-decoration: underline;
+}
+
+/*///////////////
+// Comments
+////////////////*/
+
+.comments {
+    background-color: rgb(224, 228, 228);
+    padding: 3%;
+    border-radius: 7px;
+}
+
+.comments .header {
+    overflow: hidden;
+    margin-bottom: 2%;
+}
+
+.comments .header > h3 {
+    display: inline;
+}
+
+.comments > a {
+    margin-bottom: 2%;
+}
+
+.comment {
+    border: 1px solid #5e5e5e5e;
+    padding: 1%;
+    margin-bottom: 3%;
+}
+
+.comment p {
+    padding-left: 1%;
+    margin-bottom: 0;
+}
+
+.comment a.reply {
+    padding-left: 1%;
+}
+
+.show-header {
+    overflow: hidden;
+}
+
+.container .show-header a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.button-styling {
+    margin-top: 1rem;
+}
+
+.look-like-link {
+    border: none;
+    background: transparent;
+    color: #007bff;
+}
+
+.look-like-link:hover {
+    text-decoration: underline;
+    color: blue;
+}
